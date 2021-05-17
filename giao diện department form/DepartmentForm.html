@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/inforManager.css">
+</head>
+
+<body>
+    <div align="center" style="margin-top: 50px;">
+        <form action="CreateEditApr" method="post">
+            <table class="aprt-tb" border="1">
+                <tr class="aprt-tags">
+                    <td>Tên cơ sở cho thuê</td>
+                    <td><input type="text" placeholder="type input..."></td>
+                </tr>
+                <tr class="aprt-tags">
+                    <td>Địa chỉ</td>
+                    <td
+                        style="display: flex; outline: none; border: 0px; padding: 0; height: 50px; align-items: center;">
+                        <input type="text" placeholder="type input..." class="addr-apert"
+                            style="min-width: 200px; padding-left: 16px; width: 60%;">
+                        <input type="button" value="Địa chỉ tìm kiếm" class="addr-btn-search">
+                        <input type="text" placeholder="type input..." class="addr-apert"
+                            style="min-width: 300px; margin-left: 16px;">
+                        <input type="text" placeholder="type input..." class="addr-apert" style="min-width: 200px;">
+                    </td>
+                </tr>
+                <tr class="aprt-tags">
+                    <td>Khu vực</td>
+                    <td><input type="text" placeholder="type input..." class="ip-sp"><span class="sp-char"
+                            key-sp="2">m</span></td>
+                </tr>
+                <tr class="aprt-tags">
+                    <td>Sức chứa</td>
+                    <td><input type="text" placeholder="type input..." class="ip-sp"><span class="sp-char"
+                            key-sp="">Phòng</span>
+                    </td>
+                </tr>
+                <tr class="aprt-tags">
+                    <td style="display: flex; align-items: center; border: 0px; padding: 0;">
+                        <div
+                            style="padding-right: 10px; border-right: 1px solid black; height: 80px; display: flex; align-items: center; padding-left: 16px;">
+                            XXXXXXXXX
+                        </div>
+                        <div style="width: 100%; text-align: center;">
+                            <div style="border-bottom: 1px solid black; padding-bottom: 10px;">YYYY</div>
+                            <div style="padding-top: 10px;">YYYY</div>
+                        </div>
+                    </td>
+                    <td style="padding: 0;">
+                        <input type="text" placeholder="type input..." style="padding-left: 16px; margin-bottom: 10px;">
+                        <div style="width: 100%; height: 1px; background-color: black;"></div>
+                        <input type="text" placeholder="type input..." style="padding-left: 16px; margin-top: 10px; ">
+                    </td>
+                </tr>
+                <tr class="aprt-tags">
+                    <td>sử dụng thông tin</td>
+                    <td><textarea rows="4" cols="50" name="comment" form="aprt-form" class="inf-useful"
+                            placeholder="type input..."></textarea></td>
+                </tr>
+                <tr class="aprt-tags">
+                    <td>Hình ảnh cơ sở</td>
+                    <td>
+                        <div><input type="file" class="ip-aprt"></div>
+                        <div><input type="file" class="ip-aprt"></div>
+                        <div><input type="file" class="ip-aprt"></div>
+                        <div><input type="file" class="ip-aprt"></div>
+                    </td>
+                </tr>
+                <tr class="aprt-tags">
+                    <td>Tập tin đính kèm</td>
+                    <td>
+                        <div><input type="file" class="ip-aprt"></div>
+                        <div><input type="file" class="ip-aprt"></div>
+                        <div><input type="file" class="ip-aprt"></div>
+                        <div><input type="file" class="ip-aprt"></div>
+                    </td>
+                </tr>
+            </table>
+            <div class="xm-aprt-ly">
+                <a href="index.html" class="bt-sm-aprt">Back to homepage</a>
+                <input type="Submit" value="Submit" class="bt-sm-aprt">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
