@@ -1,0 +1,5 @@
+package com.task.rentDepartment.Model;
+
+public class Department {
+
+}

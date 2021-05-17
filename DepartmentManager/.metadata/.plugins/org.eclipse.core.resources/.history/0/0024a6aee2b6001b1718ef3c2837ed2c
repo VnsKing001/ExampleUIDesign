@@ -1,0 +1,10 @@
+package com.task.rentDepartment.Model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Department {
+
+	private Integer id
+	
+}

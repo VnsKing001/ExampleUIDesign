@@ -1,0 +1,36 @@
+package com.task.rentDepartment.Model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Department {
+
+	
+	@Id
+	@GeneratedValue
+	private Integer id;
+	
+	private String name;
+	
+	private String address;
+	
+	private String addressSearch;
+	
+	private int area;
+	
+	private int canContain;
+	
+	private int limitTimeRental;
+	
+	private int rentalPeriod;
+	
+	private String descrisption;
+	
+	private String image;
+	
+	private String attachments;
+	
+	
+}

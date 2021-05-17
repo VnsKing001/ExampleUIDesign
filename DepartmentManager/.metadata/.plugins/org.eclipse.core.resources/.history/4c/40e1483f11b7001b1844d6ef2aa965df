@@ -1,0 +1,37 @@
+package com.task.rentDepartment.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+
+import com.task.rentDepartment.Controller.DepartmentNotFoundException;
+import com.task.rentDepartment.Entity.Department;
+import com.task.rentDepartment.Responsitory.DepartmentRespository;
+
+@Service
+public class DepartmentService {
+
+	public static final Integer Department_Per_Page = 4;
+
+	@Autowired
+	private DepartmentRespository repo;
+	
+	public List<Department> listAll(){
+		return repo.findAll();
+	}
+	
+	
+	public Page<Department> name() {
+		
+	}
+	
+	public void deleteById(Integer id)throws DepartmentNotFoundException {
+		Long countId = repo.countById(id);
+		if (countId == null || countId == 0) {
+			throw new DepartmentNotFoundException("Could not find Department ID: " + id);
+		}
+		repo.deleteById(id);
+	}
+}

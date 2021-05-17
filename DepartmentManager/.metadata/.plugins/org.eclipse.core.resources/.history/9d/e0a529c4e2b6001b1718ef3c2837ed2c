@@ -1,0 +1,20 @@
+package com.task.rentDepartment.Model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Department {
+
+	private Integer id;
+	
+	private String name;
+	
+	private String address;
+	
+	private String addressSearch;
+	
+	private int area;
+	
+	private int canContain;
+	
+}

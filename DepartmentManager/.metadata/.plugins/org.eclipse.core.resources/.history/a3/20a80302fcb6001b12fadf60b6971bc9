@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; intitial-scale=1.0; minimum-scale=1.0">
+<title>Rent Department - Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div style="margin: 20px 0;">
+			<h1>List Of Rental Facility Information Management</h1>
+		</div>
+		<div style=" margin-top: 100px; margin-bottom: 10px">
+		<form th:action="@{/departments}" class="form-inlinefr-cs" style=" display: flex; flex-direction: row-reverse;">
+				<div class=" mb-2">
+					Filter: <input type="search" th:value="${keyword}" name="keyword" required="required">
+						
+						 <button type="submit" value="Search" class="btn btn-primary">Search</button> 
+						 
+						<button type="button" value="Clear" id="buttonClear" class="btn btn-secondary">Clear</button>
+				</div>
+			</form>
+		</div>
+		<div th:if="${message != null}" class="alert alert-success text-center">[[${message}]]</div>
+		<div>
+			<table class="table table-bordered table-striped table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th>Department ID</th>					
+						<th>Name of rental facility</th>
+						<th>Limit Time Rental</th>
+						<th>Rental Period</th>
+						<th>Edit</th>
+						<th> Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="department : ${listDepartment}">
+						<td>[[${department.id}]]</td>
+						<td>[[${department.name}]]</td>
+						<td >[[${department.limitTimeRental}]]</td>
+						<td>[[${department.rentalPeriod}]]</td>
+						<td><a class="btn btn-secondary" th:href="@{'/departments/edit/' + ${department.id}}" title="Edit Department information">Edit</a></td>
+						<td><a class="btn btn-secondary link-delete" th:href="@{'/departments/delete/' + ${department.id}}" title="Delete Department information" th:departmentId="${department.id}">Delete</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="modal fade text-center" id="confirmModal">	
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="model-title">Delete Confirmation</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<span id="confirmText"> </span>
+					</div>
+					<div class="modal-footer">
+						<a type="button" class="btn btn-success" href=" " id="confirm">Yes</a>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+		
+	</script>
+
+</body>
+</html>

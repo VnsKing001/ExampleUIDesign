@@ -1,0 +1,21 @@
+package com.task.rentDepartment.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.task.rentDepartment.Model.Department;
+import com.task.rentDepartment.Responsitory.DepartmentRespository;
+
+@Service
+public class DepartmentService {
+
+	
+	@Autowired
+	private DepartmentRespository repo;
+	
+	public List<Department> listAll(){
+		return repo.findAll();
+	}
+}

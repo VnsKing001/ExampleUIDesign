@@ -1,0 +1,5 @@
+package com.task.rentDepartment.Responsitory;
+
+public interface DepartmentRespository {
+
+}

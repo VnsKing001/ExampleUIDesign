@@ -1,0 +1,11 @@
+package com.task.rentDepartment.Responsitory;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.task.rentDepartment.Model.Department;
+
+public interface DepartmentRespository extends JpaRepository<Department, Integer> {
+
+	
+	
+}

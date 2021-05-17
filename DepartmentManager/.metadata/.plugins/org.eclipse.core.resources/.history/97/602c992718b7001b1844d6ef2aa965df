@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a th:fragment = "pagination_link(pageNum, labelName)" class="page-link" th:href="@{${moduleURL} + '/page/' + ${pageNum} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+			[[${labelName}]]</a>
+	
+</body>
+</html>

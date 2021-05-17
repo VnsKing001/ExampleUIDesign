@@ -1,0 +1,63 @@
+package com.task.rentDepartment.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.task.rentDepartment.Entity.Department;
+import com.task.rentDepartment.Service.DepartmentService;
+
+@Controller
+public class DepartmentController {
+
+	@Autowired
+	private DepartmentService  departmentService;
+	
+	@GetMapping("/departments")
+	public String listDepartmentFirstPage(Model model) {
+		return listDepartmentInforByPage(1, model);
+	}
+	@GetMapping("/departments/page/{pageNum}")
+	public String listDepartmentInforByPage(@PathVariable("pageNum") Integer pageNum,Model model) {
+		Page<Department> pageDepartment = departmentService.listDepartmentByPage(pageNum);
+		
+		List<Department> listDepartment = pageDepartment.getContent();
+		
+		long startCount = (pageNum - 1) * DepartmentService.Department_Per_Page + 1;
+		long endCount = startCount + DepartmentService.Department_Per_Page - 1;
+		if (endCount > pageDepartment.getTotalElements()) {
+			endCount = pageDepartment.getTotalElements();
+		}
+		
+		
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("TotalPages", pageDepartment.getTotalPages());
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("listTotalPage", pageDepartment.getTotalElements());
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("listDepartment", listDepartment);
+		
+		
+		return "departments";
+	}
+	
+	@GetMapping("/departments/delete/{id}")
+	public String deleteDepartment(@PathVariable("id") Integer id,  RedirectAttributes redirectAttributes) {
+		try {	
+			departmentService.deleteById(id);
+			redirectAttributes.addFlashAttribute("message", "The Department ID " + id + " has been deleted successfull!");
+		} catch (DepartmentNotFoundException e) {
+			redirectAttributes.addFlashAttribute("message", e.getMessage());
+		}
+		return "redirect:/departments";
+	}
+	
+}

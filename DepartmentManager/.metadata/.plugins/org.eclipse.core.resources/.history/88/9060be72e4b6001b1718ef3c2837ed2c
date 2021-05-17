@@ -1,0 +1,16 @@
+package com.task.rentDepartment.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.task.rentDepartment.Responsitory.DepartmentRespository;
+
+@Service
+public class DepartmentService {
+
+	
+	@Autowired
+	private DepartmentRespository repo;
+	
+	
+}
