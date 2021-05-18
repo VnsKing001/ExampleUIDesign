@@ -19,7 +19,7 @@ a{
 }
 .aprt-tb {
   border-collapse: collapse;
-  width: 94%;
+  width: 90%;
 }
 .aprt-tags td {
   padding: 16px;
@@ -29,7 +29,7 @@ a{
 } */
 .aprt-tags > td:first-child {
   background-color: var(--lightgrey);
-  max-width: 300px;
+  /* max-width: 300px; */
   /* width: 20%; */
   text-align: center;
 }
