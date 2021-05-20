@@ -1,0 +1,15 @@
+cách lấy api sử dụng
+
+
+ggmData.location    //location
+ggmData.postalCode //postalCode
+ggmData.country  //country
+ggmData.lat //Latitude
+ggmData.lon //Longitude
+ggmData.place_id //
+
+
+muốn xóa event hiện các thông tin trên bản đồ:
+    1.xóa tất thẻ có class="geo-data" và các thẻ con của nó có trong file HTML
+
+    2.bật ctrl+F và tìm setValue(postalCode_d, country_d, location_d, lat_d, lon_d, placeId_d); xóa nó đi
